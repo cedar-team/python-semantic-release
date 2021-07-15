@@ -298,7 +298,7 @@ def load_version_declarations() -> List[VersionDeclaration]:
             # necessary.
             yield from next(csv.reader([x]))
 
-    logger.debug("version_variable", config.get("version_variable")
+    logger.debug(f"version_variable: {config.get('version_variable')}")
     for version_var in iter_fields(config.get("version_variable")):
         declaration = VersionDeclaration.from_variable(version_var)
         declarations.append(declaration)
